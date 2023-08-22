@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/prof_subject_details_constraint"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_1"
+    tools:context=".student.SubjectDetailsFragment">
+
+    <TextView
+        android:id="@+id/prof_subject_held_AE_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="15dp"
+        android:elevation="16dp"
+        android:text="number"
+        android:textColor="#FAFC90"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/prof_subject_details_held_AE"
+        app:layout_constraintTop_toBottomOf="@+id/professor_lecture_progress_bar" />
+
+    <TextView
+        android:id="@+id/qr_code_subject_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:elevation="16dp"
+        android:text="TextView"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/my_subjects_rectangle"
+        app:layout_constraintStart_toStartOf="@+id/my_subjects_rectangle"
+        app:layout_constraintTop_toTopOf="@+id/my_subjects_rectangle" />
+
+    <TextView
+        android:id="@+id/prof_subject_details_held_LTAE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="8dp"
+        android:elevation="16dp"
+        android:text="@string/prof_subject_details_held_lectures"
+        android:textColor="#FAFC90"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_subject_details_professor_KV_hours_num" />
+
+    <TextView
+        android:id="@+id/prof_subject_details_held_AE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="15dp"
+        android:elevation="16dp"
+        android:text="@string/prof_subject_details_held_AE"
+        android:textColor="#FAFC90"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/professor_lecture_progress_bar" />
+
+    <TextView
+        android:id="@+id/prof_subject_held_Lt_ammount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:elevation="16dp"
+        android:text="number"
+        android:textColor="#FAFC90"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/prof_subject_details_held_LTAE"
+        app:layout_constraintTop_toBottomOf="@+id/subject_details_CE_total_hours" />
+
+    <TextView
+        android:id="@+id/subject_details_AE_total_hours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:elevation="16dp"
+        android:text="text_view"
+        android:textColor="#FAFC90"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/professor_lecture_progress_bar" />
+
+    <TextView
+        android:id="@+id/subject_details_Lt_total_hours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:elevation="16dp"
+        android:text="text_view"
+        android:textColor="#FAFC90"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/subject_details_CE_total_hours" />
+
+    <TextView
+        android:id="@+id/fragment_subject_details_professor_KV_hours_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="50dp"
+        android:elevation="16dp"
+        android:text="@string/fragment_subject_details_KV_br_sati"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_subject_details_professor_LV_hours_num" />
+
+    <TextView
+        android:id="@+id/subject_details_LE_total_hours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="40dp"
+        android:elevation="16dp"
+        android:text="text_view"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/fragment_subject_details_professor_LV_hours_num"
+        app:layout_constraintTop_toBottomOf="@+id/my_subjects_rectangle" />
+
+    <TextView
+        android:id="@+id/subject_details_CE_total_hours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:elevation="16dp"
+        android:text="text_view"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/fragment_subject_details_professor_KV_hours_num"
+        app:layout_constraintTop_toBottomOf="@+id/subject_details_LE_total_hours" />
+
+    <TextView
+        android:id="@+id/fragment_subject_details_professor_LV_hours_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="50dp"
+        android:elevation="16dp"
+        android:text="@string/fragment_subject_details_LV_br_sati"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/my_subjects_rectangle" />
+
+    <View
+        android:id="@+id/my_subjects_rectangle"
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/rounded_background"
+        android:elevation="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/add_activity_button"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="70dp"
+        android:background="@drawable/rounded_background"
+        android:src="@drawable/ic_baseline_add_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_choice_radio_group" />
+
+    <RadioGroup
+        android:id="@+id/activity_choice_radio_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/prof_subject_details_held_AE">
+
+        <RadioButton
+            android:id="@+id/lecture_radio_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:buttonTint="@color/white"
+            android:text="Predavanje"
+            android:textColor="#FFFFFF"
+
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/AE_radio_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:buttonTint="@color/white"
+            android:text="AV"
+            android:textColor="#FFFFFF"
+
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/LE_radio_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:buttonTint="@color/white"
+            android:text="LV"
+            android:textColor="#FFFFFF"
+
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/CE_radio_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:buttonTint="@color/white"
+            android:text="KV"
+            android:textColor="#FFFFFF"
+
+            android:textStyle="bold" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="/"
+        android:textColor="#FAFC90"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/prof_subject_held_Lt_ammount"
+        app:layout_constraintTop_toBottomOf="@+id/subject_details_CE_total_hours" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="/"
+        android:textColor="#FAFC90"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/prof_subject_held_AE_amount"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <Button
+        android:id="@+id/prof_history_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/rounded_background"
+        android:text="@string/prof_history_button"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_choice_radio_group" />
+
+    <ProgressBar
+        android:id="@+id/professor_lecture_progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="250dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/rounded_background"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:progressTint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/prof_subject_details_held_LTAE" />
+
+    <ProgressBar
+        android:id="@+id/professor_ae_progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/rounded_background"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:progressTint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/prof_subject_details_held_AE" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

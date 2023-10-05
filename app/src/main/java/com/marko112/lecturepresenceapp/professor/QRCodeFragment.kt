@@ -2,6 +2,7 @@ package com.marko112.lecturepresenceapp.professor
 
 import android.annotation.SuppressLint
 import android.content.ContentValues.TAG
+import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
 import android.util.Log
@@ -78,6 +79,10 @@ class QRCodeFragment : Fragment() {
         val qrCodeImageView = view.findViewById<ImageView>(R.id.qrCodeImageView)
         if(bitmap != null){
             qrCodeImageView.setImageBitmap(bitmap)
+//            val emailIntent = Intent(Intent.ACTION_SEND)
+//            emailIntent.putExtra(Intent.EXTRA_EMAIL,"marko.kovacevic1112@gmail.com")
+//            emailIntent.putExtra(Intent.EXTRA_SUBJECT,"QR kod za kreiranu aktivnost")
+//            emailIntent.putExtra(Intent.EXTRA_TEXT,"Vaš QR kod:")
         }
         else{
             Log.d(TAG,"bitmap for qr code is null!")
@@ -86,16 +91,16 @@ class QRCodeFragment : Fragment() {
         return view
     }
 
-    private fun generateQRCode(lessonId: String): Bitmap? {
+    private fun generateQRCode(qrCodeString: String): Bitmap? {
         val writer = MultiFormatWriter()
         try {
-            val matrix: BitMatrix = writer.encode(lessonId, BarcodeFormat.QR_CODE, 600, 600)
+            val matrix: BitMatrix = writer.encode(qrCodeString, BarcodeFormat.QR_CODE, 600, 600)
             val encoder = BarcodeEncoder()
 
             return encoder.createBitmap(matrix)
 
         } catch (e: WriterException) {
-            Log.d(TAG, "$e, error while generating qr code.")
+            Log.d(TAG, "$e, Pojavila se greška prilikom generiranja QR koda")
             return null
         }
     }

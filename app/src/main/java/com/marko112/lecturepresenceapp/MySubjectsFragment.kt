@@ -42,6 +42,7 @@ class MySubjectsFragment : Fragment() {
         var name: String = ""
         val userSubjects = ArrayList<Subject>()
         var userSubjectIds = ArrayList<String>()
+        val noSubjectsMessage = view.findViewById<TextView>(R.id.no_subjects_message)
 
         val recyclerView = view.findViewById<RecyclerView>(R.id.my_subjects_list)
         val recyclerAdapter = SubjectRecyclerAdapter(userSubjects)
@@ -60,24 +61,8 @@ class MySubjectsFragment : Fragment() {
                         .get().await()
                     if(studentDocument.exists()){
                         name = (studentDocument.data?.get("Name") as? String).toString()
-
-                        userSubjectIds = studentDocument.data?.get("SubjectIds")?.let { subjectIds ->
-                            if (subjectIds is ArrayList<*>) {
-                                val convertedList = ArrayList<String>()
-                                for (id in subjectIds) {
-                                    if (id is String) {
-                                        convertedList.add(id)
-                                    } else {
-                                        convertedList.add(id.toString())
-                                    }
-                                }
-                                convertedList
-                            } else {
-                                arrayListOf(subjectIds.toString())
-                            }
-                        } ?: ArrayList()
-                    }
-                    else{
+                        userSubjectIds = getSubjectIds(studentDocument)
+                    } else{
                         isProfessor = true
                     }
                 }
@@ -85,9 +70,6 @@ class MySubjectsFragment : Fragment() {
                     Log.d(TAG, "error fetching student $e")
                 }
 
-//                if(name != ""){
-//                    isProfessor = false
-//                }
             }
             //fetch professor by ID
             auth.currentUser?.let { it ->
@@ -97,25 +79,8 @@ class MySubjectsFragment : Fragment() {
                         .get().await()
                     if(professorDocument.exists()){
                         name = (professorDocument.data?.get("Name") as? String).toString()
-
-//                        userSubjectIds = professorDocument.data?.get("SubjectIds")?.let { subjectIds ->
-//                            if (subjectIds is ArrayList<*>) {
-//                                val convertedList = ArrayList<String>()
-//                                for (id in subjectIds) {
-//                                    if (id is String) {
-//                                        convertedList.add(id)
-//                                    } else {
-//                                        convertedList.add(id.toString())
-//                                    }
-//                                }
-//                                convertedList
-//                            } else {
-//                                arrayListOf(subjectIds.toString())
-//                            }
-//                        } ?: ArrayList()
                         userSubjectIds = getSubjectIds(professorDocument)
-                    }
-                    else{
+                    } else{
                         isProfessor = false
                     }
                 }
@@ -133,30 +98,26 @@ class MySubjectsFragment : Fragment() {
             getSubjects(userSubjectIds){ subjects ->
                 userSubjects.addAll(subjects)
                 recyclerAdapter.notifyDataSetChanged()
+                if(subjects.isEmpty()){
+                    noSubjectsMessage.text = "Trenutno niste upisani ni na jedan kolegij."
+                }
             }
 
             recyclerAdapter.setOnItemClickListener(listener = object: SubjectRecyclerAdapter.ItemListener{
                 @SuppressLint("ResourceType")
                 override fun onItemClick(index: Int) {
-                    //TODO - pojednostavit kod, umjesto da fetcham id odmah mogu fetchat objekt subject
-                    val selectedSubjectId = recyclerAdapter.items[index].id
-                    var selectedSubject: Subject? = null
-                    for(subject in userSubjects){
-                        if(subject.id == selectedSubjectId){
-                            selectedSubject = subject
-                        }
-                    }
+                    val selectedSubject = recyclerAdapter.items[index]
+
                     var subjectDetailsFragment: Fragment? = null
                     if(isProfessor){
                         subjectDetailsFragment = SubjectDetailsProfessorFragment()
-                    }
-                    else{
+                    } else{
                         subjectDetailsFragment = SubjectDetailsFragment()
                     }
                     val bundle = Bundle()
                     if(selectedSubject != null){
-                        bundle.putString("Id",selectedSubject.id.toString())
-                        bundle.putString("Name",selectedSubject.name.toString())
+                        bundle.putString("Id", selectedSubject.id)
+                        bundle.putString("Name", selectedSubject.name)
                         bundle.putString("AETotalNumber",selectedSubject.totalAENum.toString())
                         bundle.putString("LectureTotalNumber",selectedSubject.totalLectureNum.toString())
                         bundle.putString("LETotalNumber",selectedSubject.totalLENum.toString())
@@ -168,9 +129,7 @@ class MySubjectsFragment : Fragment() {
                     }
                     if (subjectDetailsFragment != null) {
                         subjectDetailsFragment.arguments = bundle
-                    }
-                    val fragmentTransaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
-                    if (subjectDetailsFragment != null) {
+                        val fragmentTransaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
                         fragmentTransaction.replace(R.id.fragmentContainerView,subjectDetailsFragment).addToBackStack(null).commit()
                     }
                 }
@@ -256,4 +215,5 @@ class MySubjectsFragment : Fragment() {
         }
         return subjectIdsList
     }
+
 }

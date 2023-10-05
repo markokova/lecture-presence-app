@@ -2,59 +2,75 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lecture_history_constraint"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue_1"
-    android:id="@+id/lecture_history_constraint"
+    android:background="@color/white"
     tools:context=".professor.LectureHistoryFragment">
+
+    <View
+        android:id="@+id/top_view_register7"
+        android:layout_width="wrap_content"
+        android:layout_height="180dp"
+        android:background="@drawable/top_rounded_rectangle"
+        android:elevation="-17dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/registration_rectangle7"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/shaded_rectangle"
+        android:elevation="-10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_lecture_history_title" />
 
     <TextView
         android:id="@+id/fragment_lecture_history_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:elevation="16dp"
         android:text="TextView"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/title_rectangle_history"
-        app:layout_constraintEnd_toEndOf="@+id/title_rectangle_history"
-        app:layout_constraintStart_toStartOf="@+id/title_rectangle_history"
-        app:layout_constraintTop_toTopOf="@+id/title_rectangle_history" />
-
-    <View
-        android:id="@+id/title_rectangle_history"
-        android:layout_width="350dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="15dp"
-        android:background="@drawable/rounded_background"
-        android:elevation="15dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/top_view_register7" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/history_lecture_list"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_rectangle_history" />
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/registration_rectangle7"
+        app:layout_constraintEnd_toEndOf="@+id/registration_rectangle7"
+        app:layout_constraintStart_toStartOf="@+id/registration_rectangle7"
+        app:layout_constraintTop_toTopOf="@+id/registration_rectangle7" />
 
     <TextView
         android:id="@+id/no_lectures_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#FFFFFF"
+        android:textColor="#ABCDFF"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/history_lecture_list"
-        app:layout_constraintEnd_toEndOf="@+id/history_lecture_list"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_rectangle_history" />
+        app:layout_constraintTop_toTopOf="@+id/registration_rectangle7" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

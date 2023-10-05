@@ -10,7 +10,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore
@@ -55,10 +54,13 @@ class SubjectDetailsProfessorFragment : Fragment() {
         val subjectNameTextView = view.findViewById<TextView>(R.id.qr_code_subject_name)
         val totalAENum = view.findViewById<TextView>(R.id.subject_details_AE_total_hours)
         val totalLectureNum = view.findViewById<TextView>(R.id.subject_details_Lt_total_hours)
-        val totalLENum = view.findViewById<TextView>(R.id.subject_details_LE_total_hours)
-        val totalCENum = view.findViewById<TextView>(R.id.subject_details_CE_total_hours)
+        val totalLENum = view.findViewById<TextView>(R.id.subject_details_LE_total_hours2)
+        val totalCENum = view.findViewById<TextView>(R.id.subject_details_CE_total_hours2)
         val heldLectures = view.findViewById<TextView>(R.id.prof_subject_held_Lt_ammount)
         val heldAE = view.findViewById<TextView>(R.id.prof_subject_held_AE_amount)
+        val heldLE = view.findViewById<TextView>(R.id.prof_subject_held_LE_ammount)
+        val heldCE = view.findViewById<TextView>(R.id.prof_subject_held_CE_ammount)
+
         val activityChoiceGroup = view.findViewById<RadioGroup>(R.id.activity_choice_radio_group)
         lectureDuration = arguments?.getCharSequence("LectureDuration").toString().toInt()
         aEDuration = arguments?.getCharSequence("AEDuration").toString().toInt()
@@ -83,6 +85,24 @@ class SubjectDetailsProfessorFragment : Fragment() {
                 totalAENum.text.toString().toDouble())*100).toInt()
             }else{
                 heldAE.text = "-1"
+            }
+            val leResult = calculateHeldActivitiesAmount(lEDuration, "LaboratoryExercises")
+            if(leResult != -1){
+                heldLE.text = leResult.toString()
+                val leProgressBar = view.findViewById<ProgressBar>(R.id.professor_LE_progress_bar)
+                leProgressBar.progress = ((heldLE.text.toString().toDouble()/
+                        totalLENum.text.toString().toDouble())*100).toInt()
+            }else{
+                heldLE.text = "-1"
+            }
+            val ceResult = calculateHeldActivitiesAmount(cEDuration, "ConstructionExercises")
+            if(ceResult != -1){
+                heldCE.text = ceResult.toString()
+                val ceProgressBar = view.findViewById<ProgressBar>(R.id.professor_CE_progress_bar)
+                ceProgressBar.progress = ((heldCE.text.toString().toDouble()/
+                        totalCENum.text.toString().toDouble())*100).toInt()
+            }else{
+                heldCE.text = "-1"
             }
         }
 
@@ -221,14 +241,15 @@ class SubjectDetailsProfessorFragment : Fragment() {
     }
 
     private fun goToHistoryFragment(){
+        val lectureHistoryFragment = LectureHistoryFragment()
+        val fragmentTransaction : FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+
         bundle.putString("subjectId", arguments?.getCharSequence("Id").toString())
         bundle.putString("activityType", activityToCreate)
         bundle.putString("subjectName", subjectName)
         bundle.putString("activityName", activityName)
-
-        val lectureHistoryFragment = LectureHistoryFragment()
-        val fragmentTransaction : FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
         lectureHistoryFragment.arguments = bundle
+
         fragmentTransaction.replace(R.id.fragmentContainerView, lectureHistoryFragment).addToBackStack(null).commit()
     }
 

@@ -4,8 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue_1"
+    android:background="@color/white"
     tools:context=".MySubjectsFragment">
+
+    <View
+        android:id="@+id/registration_rectangle3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/shaded_rectangle"
+        android:elevation="-10dp"
+        app:layout_constraintBottom_toTopOf="@+id/adding_subjects_dropdown_menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/qr_code_subject_name" />
+
+    <View
+        android:id="@+id/top_view_register3"
+        android:layout_width="wrap_content"
+        android:layout_height="180dp"
+        android:background="@drawable/top_rounded_rectangle"
+        android:elevation="-17dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/qr_code_subject_name"
@@ -17,48 +43,34 @@
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/my_subjects_rectangle"
-        app:layout_constraintStart_toStartOf="@+id/my_subjects_rectangle"
-        app:layout_constraintTop_toTopOf="@+id/my_subjects_rectangle" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/top_view_register3"
+        app:layout_constraintTop_toTopOf="@+id/top_view_register3" />
 
     <TextView
         android:id="@+id/my_subjects_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:elevation="16dp"
         android:text="@string/fragment_my_subjects_title"
-        android:textColor="#FFFFFF"
+        android:textColor="#ABCDFF"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/my_subjects_rectangle" />
-
-    <View
-        android:id="@+id/my_subjects_rectangle"
-        android:layout_width="350dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="15dp"
-        android:background="@drawable/rounded_background"
-        android:elevation="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/registration_rectangle3" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/my_subjects_list"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="15dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/adding_subjects_dropdown_menu"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/registration_rectangle3"
+        app:layout_constraintEnd_toEndOf="@+id/registration_rectangle3"
+        app:layout_constraintStart_toStartOf="@+id/registration_rectangle3"
         app:layout_constraintTop_toBottomOf="@+id/my_subjects_title" />
 
     <Spinner
@@ -70,6 +82,18 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/no_subjects_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/my_subjects_title" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

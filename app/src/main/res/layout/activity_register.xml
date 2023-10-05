@@ -6,18 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:srcCompat="@drawable/background3" />
-
     <EditText
         android:id="@+id/activity_register_email"
         android:layout_width="wrap_content"
@@ -36,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:hint="Name"
+        android:hint="Ime i prezime"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
@@ -48,8 +36,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="63dp"
-        android:fontFamily="casual"
+        android:layout_marginTop="40dp"
+        android:elevation="16dp"
+        android:fontFamily="sans-serif"
         android:text="@string/register_title"
         android:textAlignment="center"
         android:textAllCaps="false"
@@ -58,7 +47,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/activity_register_password"
@@ -66,7 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:ems="10"
-        android:hint="Password"
+        android:hint="Zaporka"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -74,30 +63,43 @@
 
     <Button
         android:id="@+id/activity_register_register_button"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/rounded_background"
         android:text="@string/register_button"
         android:textColor="#FFFFFF"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/activity_register_password" />
+        app:layout_constraintTop_toBottomOf="@+id/registration_rectangle" />
 
     <TextView
         android:id="@+id/activity_register_login_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:text="@string/activity_register_login_button"
-        android:textColor="#FDFAEB"
+        android:textColor="#ABCDFF"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_register_register_button" />
+
+    <TextView
+        android:id="@+id/password_requirements_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/password_requirements_text"
+        android:textColor="#ABCDFF"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/activity_register_password"
+        app:layout_constraintStart_toStartOf="@+id/activity_register_password"
+        app:layout_constraintTop_toBottomOf="@+id/activity_register_password" />
 
     <RadioGroup
         android:id="@+id/student_professor_choice"
@@ -120,4 +122,26 @@
             android:layout_height="wrap_content"
             android:text="@string/radio_professor" />
     </RadioGroup>
+
+    <View
+        android:id="@+id/top_view_register"
+        android:layout_width="wrap_content"
+        android:layout_height="180dp"
+        android:background="@drawable/top_rounded_rectangle"
+        android:elevation="-17dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/registration_rectangle"
+        android:layout_width="350dp"
+        android:layout_height="450dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/shaded_rectangle"
+        android:elevation="-10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_register_title" />
 </androidx.constraintlayout.widget.ConstraintLayout>

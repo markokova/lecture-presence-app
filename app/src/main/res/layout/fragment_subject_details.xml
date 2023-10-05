@@ -4,8 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue_1"
+    android:background="@color/white"
     tools:context=".student.SubjectDetailsFragment">
+
+    <View
+        android:id="@+id/registration_rectangle5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/shaded_rectangle"
+        android:elevation="-10dp"
+        app:layout_constraintBottom_toTopOf="@+id/goToScanScreenButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/qr_code_subject_name"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:id="@+id/top_view_register5"
+        android:layout_width="wrap_content"
+        android:layout_height="180dp"
+        android:background="@drawable/top_rounded_rectangle"
+        android:elevation="-17dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/qr_code_subject_name"
@@ -13,13 +41,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:elevation="16dp"
-        android:text="TextView"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/my_subjects_rectangle"
-        app:layout_constraintStart_toStartOf="@+id/my_subjects_rectangle"
-        app:layout_constraintTop_toTopOf="@+id/my_subjects_rectangle" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/top_view_register5" />
 
     <TextView
         android:id="@+id/my_subjects_title"
@@ -29,12 +56,12 @@
         android:layout_marginEnd="50dp"
         android:elevation="16dp"
         android:text="@string/fragment_subject_details_PR_br_sati"
-        android:textColor="#FFFFFF"
+        android:textColor="#ABCDFF"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.478"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/my_subjects_rectangle" />
+        app:layout_constraintTop_toTopOf="@+id/registration_rectangle5" />
 
     <TextView
         android:id="@+id/subject_details_AE_total_hours"
@@ -43,8 +70,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:elevation="16dp"
-        android:text="text_view"
-        android:textColor="#FFFFFF"
+        android:textColor="#ABCDFF"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/fragment_subject_details_professor_AV_hours_num"
         app:layout_constraintTop_toBottomOf="@+id/subject_details_Lt_total_hours" />
@@ -56,11 +82,10 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="30dp"
         android:elevation="16dp"
-        android:text="text_view"
-        android:textColor="#FFFFFF"
+        android:textColor="#ABCDFF"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/my_subjects_title"
-        app:layout_constraintTop_toBottomOf="@+id/my_subjects_rectangle" />
+        app:layout_constraintTop_toTopOf="@+id/registration_rectangle5" />
 
     <TextView
         android:id="@+id/fragment_subject_details_professor_KV_hours_num"
@@ -70,12 +95,12 @@
         android:layout_marginEnd="50dp"
         android:elevation="16dp"
         android:text="@string/fragment_subject_details_KV_br_sati"
-        android:textColor="#FFFFFF"
+        android:textColor="#ABCDFF"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.525"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fragment_subject_details_professor_LV_hours_num" />
+        app:layout_constraintTop_toBottomOf="@+id/prof_subject_details_held_LE" />
 
     <TextView
         android:id="@+id/subject_details_LE_total_hours"
@@ -84,10 +109,9 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:elevation="16dp"
-        android:text="text_view"
-        android:textColor="#FFFFFF"
+        android:textColor="#ABCDFF"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/fragment_subject_details_professor_LV_hours_num"
+        app:layout_constraintStart_toEndOf="@+id/prof_subject_details_held_LE"
         app:layout_constraintTop_toBottomOf="@+id/subject_details_AE_total_hours" />
 
     <TextView
@@ -97,21 +121,20 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:elevation="16dp"
-        android:text="text_view"
-        android:textColor="#FFFFFF"
+        android:textColor="#ABCDFF"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/fragment_subject_details_professor_KV_hours_num"
         app:layout_constraintTop_toBottomOf="@+id/subject_details_LE_total_hours" />
 
     <TextView
-        android:id="@+id/fragment_subject_details_professor_LV_hours_num"
+        android:id="@+id/prof_subject_details_held_LE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="50dp"
         android:elevation="16dp"
         android:text="@string/fragment_subject_details_LV_br_sati"
-        android:textColor="#FFFFFF"
+        android:textColor="#ABCDFF"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.522"
@@ -126,146 +149,144 @@
         android:layout_marginEnd="50dp"
         android:elevation="16dp"
         android:text="@string/fragment_subject_details_AV_br_sati"
-        android:textColor="#FFFFFF"
+        android:textColor="#ABCDFF"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/my_subjects_title" />
 
-    <View
-        android:id="@+id/my_subjects_rectangle"
-        android:layout_width="350dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="15dp"
-        android:background="@drawable/rounded_background"
-        android:elevation="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ImageButton
         android:id="@+id/goToScanScreenButton"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="80dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="30dp"
         android:background="@drawable/rounded_background"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progress_bar_le_attended_student"
         app:srcCompat="@drawable/ic_baseline_camera_alt_24" />
 
     <ProgressBar
         android:id="@+id/progress_bar_lecture_attended_student"
         style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="150dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="20dp"
         android:elevation="16dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:progressBackgroundTint="@color/zxing_transparent"
         android:progressTint="@color/teal_700"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/registration_rectangle5"
+        app:layout_constraintStart_toStartOf="@+id/registration_rectangle5"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <ProgressBar
         android:id="@+id/progress_bar_le_attended_student"
         style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="150dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
         android:elevation="16dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:progressBackgroundTint="@color/zxing_transparent"
         android:progressTint="@color/teal_700"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/registration_rectangle5"
+        app:layout_constraintStart_toStartOf="@+id/registration_rectangle5"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <ProgressBar
         android:id="@+id/progress_bar_ce_held_student"
         style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="150dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="15dp"
+        android:layout_marginEnd="20dp"
         android:background="@drawable/rounded_background"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:progressTint="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/registration_rectangle5"
+        app:layout_constraintStart_toStartOf="@+id/registration_rectangle5"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <ProgressBar
         android:id="@+id/progress_bar_le_held_student"
         style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="150dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
         android:background="@drawable/rounded_background"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:progressTint="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/registration_rectangle5"
+        app:layout_constraintStart_toStartOf="@+id/registration_rectangle5"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <ProgressBar
         android:id="@+id/progress_bar_ce_attended_student"
         style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="150dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="15dp"
+        android:layout_marginEnd="20dp"
         android:elevation="16dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:progressBackgroundTint="@color/zxing_transparent"
         android:progressTint="@color/teal_700"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/registration_rectangle5"
+        app:layout_constraintStart_toStartOf="@+id/registration_rectangle5"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <ProgressBar
         android:id="@+id/progress_bar_ae_attended_student"
         style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="150dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="15dp"
+        android:layout_marginEnd="20dp"
         android:elevation="16dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:progressBackgroundTint="@color/zxing_transparent"
         android:progressTint="@color/teal_700"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/registration_rectangle5"
+        app:layout_constraintStart_toStartOf="@+id/registration_rectangle5"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="80dp"
+        android:layout_marginTop="10dp"
         android:text="AV"
-        android:textColor="#FFFFFF"
+        android:textColor="#ABCDFF"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fragment_subject_details_professor_KV_hours_num" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="10dp"
         android:text="PR"
-        android:textColor="#FFFFFF"
+        android:textColor="#ABCDFF"
         android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fragment_subject_details_professor_KV_hours_num" />
 
@@ -273,61 +294,66 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="10dp"
         android:text="LV"
-        android:textColor="#FFFFFF"
+        android:textColor="#ABCDFF"
         android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progress_bar_lecture_attended_student" />
+        app:layout_constraintTop_toBottomOf="@+id/textView20" />
 
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="80dp"
+        android:layout_marginTop="10dp"
         android:text="KV"
-        android:textColor="#FFFFFF"
+        android:textColor="#ABCDFF"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progress_bar_ae_attended_student" />
-
-    <ProgressBar
-        android:id="@+id/progress_bar_lecture_held_student"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/rounded_background"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:progressTint="@color/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/textView21" />
+
     <!--        android:backgroundTint="@color/zxing_transparent"-->
     <!--        android:progressBackgroundTint="@color/zxing_transparent"-->
     <ProgressBar
-        android:id="@+id/progress_bar_ae_held_student"
+        android:id="@+id/progress_bar_lecture_held_student"
         style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="150dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="15dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="20dp"
         android:background="@drawable/rounded_background"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:progressTint="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/registration_rectangle5"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/registration_rectangle5"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar_ae_held_student"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/rounded_background"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:progressTint="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/registration_rectangle5"
+        app:layout_constraintStart_toStartOf="@+id/registration_rectangle5"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <TextView
         android:id="@+id/held_ae_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textColor="#FFFFFF"
+        android:textColor="#ABCDFF"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/progress_bar_ae_attended_student"
         app:layout_constraintTop_toBottomOf="@+id/progress_bar_ae_attended_student" />
@@ -336,8 +362,7 @@
         android:id="@+id/held_le_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textColor="#FFFFFF"
+        android:textColor="#ABCDFF"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/progress_bar_le_attended_student"
         app:layout_constraintTop_toBottomOf="@+id/progress_bar_le_attended_student" />
@@ -346,8 +371,7 @@
         android:id="@+id/held_ce_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textColor="#FFFFFF"
+        android:textColor="#ABCDFF"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/progress_bar_ce_held_student"
         app:layout_constraintTop_toBottomOf="@+id/progress_bar_ce_held_student" />
@@ -357,7 +381,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="/"
-        android:textColor="#FFFFFF"
+        android:textColor="#ABCDFF"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/held_lecture_number"
         app:layout_constraintTop_toBottomOf="@+id/progress_bar_lecture_attended_student" />
@@ -367,7 +391,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="/"
-        android:textColor="#FFFFFF"
+        android:textColor="#ABCDFF"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/held_ae_number"
         app:layout_constraintTop_toBottomOf="@+id/progress_bar_ae_attended_student" />
@@ -377,7 +401,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="/"
-        android:textColor="#FFFFFF"
+        android:textColor="#ABCDFF"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/held_le_number"
         app:layout_constraintTop_toBottomOf="@+id/progress_bar_le_attended_student" />
@@ -387,7 +411,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="/"
-        android:textColor="#FFFFFF"
+        android:textColor="#ABCDFF"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/held_ce_number"
         app:layout_constraintTop_toBottomOf="@+id/progress_bar_ce_held_student" />
@@ -396,8 +420,7 @@
         android:id="@+id/attended_lectures_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textColor="#FFFFFF"
+        android:textColor="#ABCDFF"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/textView16"
         app:layout_constraintTop_toBottomOf="@+id/progress_bar_lecture_attended_student" />
@@ -406,8 +429,7 @@
         android:id="@+id/held_lecture_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textColor="#FFFFFF"
+        android:textColor="#ABCDFF"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/progress_bar_lecture_attended_student"
         app:layout_constraintTop_toBottomOf="@+id/progress_bar_lecture_attended_student" />
@@ -416,8 +438,7 @@
         android:id="@+id/attended_ae_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textColor="#FFFFFF"
+        android:textColor="#ABCDFF"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/textView20"
         app:layout_constraintTop_toBottomOf="@+id/progress_bar_ae_attended_student" />
@@ -426,8 +447,7 @@
         android:id="@+id/attended_ce_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textColor="#FFFFFF"
+        android:textColor="#ABCDFF"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/textView22"
         app:layout_constraintTop_toBottomOf="@+id/progress_bar_ce_held_student" />
@@ -436,8 +456,7 @@
         android:id="@+id/attended_le_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textColor="#FFFFFF"
+        android:textColor="#ABCDFF"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/textView21"
         app:layout_constraintTop_toBottomOf="@+id/progress_bar_le_attended_student" />
@@ -446,14 +465,13 @@
         android:id="@+id/textView23"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="41dp"
+        android:layout_marginStart="238dp"
         android:elevation="18dp"
         android:text="|"
         android:textColor="#D62828"
         android:textSize="10sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/progress_bar_lecture_attended_student"
-        app:layout_constraintEnd_toEndOf="@+id/progress_bar_lecture_attended_student"
         app:layout_constraintStart_toStartOf="@+id/progress_bar_lecture_attended_student"
         app:layout_constraintTop_toTopOf="@+id/progress_bar_lecture_attended_student" />
 
@@ -461,14 +479,13 @@
         android:id="@+id/textView24"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="41dp"
+        android:layout_marginStart="238dp"
         android:elevation="18dp"
         android:text="|"
         android:textColor="#D62828"
         android:textSize="10sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/progress_bar_le_attended_student"
-        app:layout_constraintEnd_toEndOf="@+id/progress_bar_le_attended_student"
         app:layout_constraintStart_toStartOf="@+id/progress_bar_le_attended_student"
         app:layout_constraintTop_toTopOf="@+id/progress_bar_le_attended_student" />
 
@@ -476,14 +493,13 @@
         android:id="@+id/textView25"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="41dp"
+        android:layout_marginStart="238dp"
         android:elevation="18dp"
         android:text="|"
         android:textColor="#D62828"
         android:textSize="10sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/progress_bar_ce_held_student"
-        app:layout_constraintEnd_toEndOf="@+id/progress_bar_ce_held_student"
         app:layout_constraintStart_toStartOf="@+id/progress_bar_ce_held_student"
         app:layout_constraintTop_toTopOf="@+id/progress_bar_ce_held_student" />
 
@@ -491,14 +507,13 @@
         android:id="@+id/textView26"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="41dp"
+        android:layout_marginStart="238dp"
         android:elevation="18dp"
         android:text="|"
         android:textColor="#D62828"
         android:textSize="10sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/progress_bar_ae_attended_student"
-        app:layout_constraintEnd_toEndOf="@+id/progress_bar_ae_attended_student"
         app:layout_constraintStart_toStartOf="@+id/progress_bar_ae_attended_student"
         app:layout_constraintTop_toTopOf="@+id/progress_bar_ae_attended_student" />
 

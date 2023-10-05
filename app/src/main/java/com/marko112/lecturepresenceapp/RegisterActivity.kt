@@ -45,12 +45,14 @@ class RegisterActivity : AppCompatActivity() {
         }
         //Mozda bi ipak trebao koristiti set i postaviti sve dokumente na user.uid iz autentifikacije
         registerButton.setOnClickListener {
-            auth.createUserWithEmailAndPassword(userEmail.text.toString(), userPassword.text.toString())
-                .addOnCompleteListener{ task ->
-                    if(task.isSuccessful){
-                        Log.d(TAG,"User created Successfully")
-                        //Check if all boxes are filled
-                        if(userName.text.isNotEmpty() && userEmail.text.isNotEmpty() && userPassword.text.isNotEmpty() && isStudent != 0){
+            if(userName.text.isEmpty() || userEmail.text.isEmpty() || userPassword.text.isEmpty() || isStudent == 0){
+                Toast.makeText(baseContext, "Potrebno je ispuniti sve kutije.", Toast.LENGTH_LONG).show()
+            }else{
+                auth.createUserWithEmailAndPassword(userEmail.text.toString(), userPassword.text.toString())
+                    .addOnCompleteListener{ task ->
+                        if(task.isSuccessful){
+                            Log.d(TAG,"User created Successfully")
+                            //Check if all boxes are filled
                             if(isStudent == 1) //if user is student
                             {
                                 val data = hashMapOf(
@@ -108,12 +110,11 @@ class RegisterActivity : AppCompatActivity() {
                             }
                             Toast.makeText(baseContext,"User is Registered.",Toast.LENGTH_LONG).show()
                             startActivity(Intent(this, LoginActivity::class.java))
-                        }
-                        else{
-                            Toast.makeText(baseContext, "You have to fill in all boxes.", Toast.LENGTH_LONG).show()
+
                         }
                     }
-                }
+            }
+
         }
     }
 }
